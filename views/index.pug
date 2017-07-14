@@ -1,8 +1,10 @@
 doctype html
-html
+html(lang='en')
 	head
 		title demo
+		script( src='react.js')
+		script( src="react-dom.js")
+		script( src="browser.min.js")
 	body
-		h1 hello world!
-		div#demo 
-			script(type='text/babel' src='/route/demo.js')
+		div#demo
+		script(type='text/babel', src='jsx/demo.js')
