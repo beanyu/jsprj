@@ -9,6 +9,8 @@ app.use(require('koa-static')(__dirname + '/out'));
 const Pug = require('koa-pug');
 const pug = new Pug({
   viewPath: './views',
+  inlineRuntimeFunctions: false,
+  compileDebug: true,
   app: app // equals to pug.use(app) and app.use(pug.middleware)
 });
 
@@ -19,7 +21,7 @@ pug.locals.someKey = 'some value';
 
 app.use(async (ctx, next) =>  {
 	console.log(__dirname);
-  	ctx.render('content')
+  	ctx.render('content', true);
 });
 
 app.listen(3002);

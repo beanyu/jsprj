@@ -6,6 +6,6 @@
 	    ],
 	"plugins": [    
 		"transform-react-pug",
-    		"transform-react-jsx"
+    	"transform-react-jsx"
 	]
 }
