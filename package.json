@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "supervisor app.js",
-    "build": "browserify lib/jsx/entry.js -o out/bundle.js -t"
+    "build": "browserify src/jsx/entry.js -o src/built/bundle.js -t"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

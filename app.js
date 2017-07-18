@@ -5,7 +5,7 @@ let path = require('path');
 const app = new Koa();
 //app.listen(3000);
 
-app.use(require('koa-static')(__dirname + '/out'));
+app.use(require('koa-static')(__dirname + '/src'));
 const Pug = require('koa-pug');
 const pug = new Pug({
   viewPath: './views',
@@ -21,7 +21,7 @@ pug.locals.someKey = 'some value';
 
 app.use(async (ctx, next) =>  {
 	console.log(__dirname);
-  	ctx.render('content', true);
+  	ctx.render('content', { handler : ctx }, true);
 });
 
 app.listen(3002);
