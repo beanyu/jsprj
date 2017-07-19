@@ -16,14 +16,14 @@
           ],
           "plugins": [    
             "transform-react-pug",
-              "transform-react-jsx"
+            "transform-react-jsx"
           ]
         }
       ]
     ]
   },
   "scripts": {
-    "start": "supervisor app.js",
+    "start": "supervisor -w ./src app.js ",
     "build": "browserify src/jsx/entry.js -o src/built/bundle.js -t"
   },
   "devDependencies": {

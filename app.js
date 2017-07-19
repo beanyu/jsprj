@@ -1,6 +1,6 @@
 const Koa = require('koa');
-const route = require( 'koa-router' );
-let path = require('path');
+const path = require('path');
+const route = require('./route/index.js');
 
 const app = new Koa();
 //app.listen(3000);
@@ -19,9 +19,8 @@ pug.locals.someKey = 'some value';
 // or use absolute paths
 
 
-app.use(async (ctx, next) =>  {
-	console.log(__dirname);
-  	ctx.render('content', { handler : ctx }, true);
-});
+app
+	.use(route.routes())
+	.use(route.allowedMethods());
 
 app.listen(3002);
