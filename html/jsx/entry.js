@@ -3,8 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Wrapper from './wrapper';
 
-
+const div = document.getElementById('wrapper');
 ReactDOM.render(
-	<Wrapper />,
-	document.getElementById('wrapper')
+	<Wrapper />, div
 );

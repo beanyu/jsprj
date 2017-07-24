@@ -11,28 +11,26 @@ class Header extends React.Component{
 	}
 }
 
-class Menu extends React.Component{
-	constructor(props){
-		super(props);
-		this.menu = this.props.menu;
-		this.login = this.props.login
-	}
-
+class Menu extends React.Component{  //react-pug not support interpolation syntax
 	render(){
-		return pug`
-            nav#menu
-                ul( class="links" )
-                    li txt
-        `;
+		return (
+			<nav id="menu">
+				<ul>
+					{this.props.menu.map((items) =>
+						<li key={items.title}>{items.title}</li>
+					)}
+				</ul>
+			</nav>
+		);
 	}
 }
 
-let menu_array = {
-	'Home': 'index.html',
-	'Landing': 'landing.html',
-	'Generic': 'generic.html',
-	'Elements': 'elements.html' 
-};
+let menu_array = [
+	{title:'Home', url: 'index.html'},
+	{title:'Landing', url: 'landing.html'},
+	{title:'Generic', url: 'generic.html'},
+	{title:'Elements', url: 'elements.html'}
+];
 
 let log_array = {
 	'Get Started': 'button special fit',
@@ -45,7 +43,6 @@ class Wrapper extends React.Component{
 			<div>
 				<Header />
 				<Menu menu={menu_array} login={log_array} />
-				
 			</div>
 		)
 	}

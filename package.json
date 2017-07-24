@@ -23,8 +23,8 @@
     ]
   },
   "scripts": {
-    "start": "supervisor -w ./src app.js ",
-    "build": "browserify src/jsx/entry.js -o src/built/bundle.js -t"
+    "start": "supervisor -w ./html app.js ",
+    "build": "browserify html/jsx/entry.js -o html/built/bundle.js -t"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

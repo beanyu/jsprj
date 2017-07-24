@@ -5,7 +5,7 @@ const route = require('./route/index.js');
 const app = new Koa();
 //app.listen(3000);
 
-app.use(require('koa-static')(__dirname + '/src'));
+app.use(require('koa-static')(__dirname + '/html'));
 const Pug = require('koa-pug');
 const pug = new Pug({
   viewPath: './views',
