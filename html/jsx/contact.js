@@ -63,7 +63,7 @@ class Contact extends React.Component{
 	render(){
 		return (
 			<section id="contact">
-				<div>
+				<div className="inner">
 					<SectionOne />
 					<SectionTwo />
 				</div>

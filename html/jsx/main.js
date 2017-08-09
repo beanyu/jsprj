@@ -47,7 +47,7 @@ class ScopeTwo extends React.Component{
                 div(className="inner")
                     header(className="major")
                         h2 Warriors of the night, assemble!
-                    p Storm, Earth, and the air, heed my call!
+                    p Storm, Earth, and the air, heed my call!Storm, Earth, and the air, heed my call!Storm, Earth, and the air, heed my call!Storm, Earth, and the air, heed my call!
                     ul(className="actions")
                         li #[a( href="landing.html", className="button next" ) Get Started]
         `;
