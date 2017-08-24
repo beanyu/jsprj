@@ -10,14 +10,17 @@ const footer_array = [
 
 class VendorList extends React.Component{
 	render(){
+		const listItems = this.props.vendor.map( (item) => 
+				<li key={item.content}>
+					<a key={item.content} href={item.url} className={item.style}><span key={item.content} className="label">{item.content}</span></a>
+				</li>
+			);
+
 		return(
 			<ul className="icons">
-				{this.props.third.map( (item) => {
-						<li key={item.content}>{item.content}</li>
-					}
-				)}
+				{listItems}
 			</ul>
-		)
+		);
 	}
 }
 
@@ -26,7 +29,7 @@ class Footer extends React.Component{
 		return (
 			<footer id="footer">
 				<div className="inner">
-					<VendorList third={footer_array} />
+					<VendorList vendor={footer_array} />
 					<ul className="copyright">
 						<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
 					</ul>
