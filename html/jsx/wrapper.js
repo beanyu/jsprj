@@ -10,10 +10,10 @@ const menu_array = [
 	{title:'Elements', url: 'elements.html'}
 ];
 
-const log_array = {
-	'Get Started': 'button special fit',
-	'Log In': 'button fit'
-};
+const menu_button = [
+	{title:"Get Started", url:"#", style:"button special fit"},
+	{title:"Log In", url:"#", style:"button fit"}
+];
 
 class Header extends React.Component{
 	render(){
@@ -30,10 +30,15 @@ class Menu extends React.Component{  //react-pug not support interpolation synta
 	render(){
 		return (
 			<nav id="menu">
-				<ul>
-					{this.props.menu.map((items) => {
-							<li key={items.title}>{items.title}</li>
-						}
+				<ul className="links">
+					{this.props.menu.map((items) => 
+						<li key={items.title}><a key={items.title} href={items.url}>{items.title}</a></li>
+						
+					)}
+				</ul>
+				<ul className="actions vertical">
+					{this.props.login.map((items) => 
+						<li key={items.title}><a key={items.title} href={items.url} className={items.style}>{items.title}</a></li>
 					)}
 				</ul>
 			</nav>
@@ -61,7 +66,7 @@ class Wrapper extends React.Component{
 		return(
 			<div>
 				<Header />
-				<Menu menu={menu_array} login={log_array} />
+				<Menu menu={menu_array} login={menu_button} />
 				<Banner />
 				<Main />
 				<Contact />
