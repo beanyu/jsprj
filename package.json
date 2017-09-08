@@ -23,8 +23,10 @@
     ]
   },
   "scripts": {
-    "start": "supervisor -w ./html app.js ",
-    "build": "browserify html/jsx/entry.js -o html/built/bundle.js -t"
+    "start": "supervisor -w ./views --harmony app.js ",
+    "build": "npm run build_home & npm run build_signing",
+    "build_home": "browserify html/jsx/mainpage/entry.js -o html/built/bundle_home.js -t",
+    "build_signing": "browserify html/jsx/signing/singup.js -o html/built/bundle_signup.js -t"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

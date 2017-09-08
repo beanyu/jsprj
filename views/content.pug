@@ -1,10 +1,10 @@
-extend index.pug
+extends index.pug
 	
 append content
-	div#wrapper
-	script(type='text/javascript', src='built/bundle.js')
+	div(id=id)
+	script(type='text/javascript', src=reactjs)
 
-append script
+block script
 	script(src='js/jquery.min.js')
 	script(src='js/jquery.scrollex.min.js')
 	script(src='js/jquery.scrolly.min.js')
